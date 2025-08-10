@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<BorlandProject>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.104,=C:\Users\gd182\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.160,=C:\Users\gd182\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.072,C:\Users\gd182\Documents\Embarcadero\Studio\Projects\Project1PCH1.h=D:\C++Builder\ЗК\11.42\CalcBusStopOccupPCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.219,=C:\Users\gd182\Documents\Embarcadero\Studio\Projects\Project1PCH1.h</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.502,C:\Users\gd182\Documents\Embarcadero\Studio\Projects\Unit2.dfm=D:\C++Builder\ЗК\11.42\MainUnit.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.785,C:\Users\gd182\Documents\Embarcadero\Studio\Projects\Project1.cbproj=D:\C++Builder\ЗК\11.42\CalcBusStopOccup.cbproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.502,C:\Users\gd182\Documents\Embarcadero\Studio\Projects\Unit2.cpp=D:\C++Builder\ЗК\11.42\MainUnit.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.508,=C:\Users\gd182\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.573,=C:\Users\gd182\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.436,=C:\Users\gd182\Documents\Embarcadero\Studio\Projects\Unit2.cpp</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.502,C:\Users\gd182\Documents\Embarcadero\Studio\Projects\Unit2.h=D:\C++Builder\ЗК\11.42\MainUnit.h</Transaction>
+  </Transactions>
+</BorlandProject>
