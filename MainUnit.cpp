@@ -191,19 +191,19 @@ bool __fastcall TMainForm::SaveSourData() { //сохранение данных в файл
 	}
 	for (int i=0; i < CapacityGrid -> ColCount-1; i++) {      //запись данных из 1 таблице в массив
 		if (CapacityGrid -> Cells[i+1][1]==L"")
-			DCapacityGrid[i]=DBL_MIN;                    //если €чейка пуста€, то запись минимального значени€
+			DCapacityGrid[i]=INT_MIN;                    //если €чейка пуста€, то запись минимального значени€
 		else
 			TryStrToInt(CapacityGrid -> Cells[i+1][1],DCapacityGrid[i]);
 	}
 	for (int i=0; i < NumDoorsGrid -> ColCount-1; i++) {      //запись данных из 2 таблице в массив
 		if (NumDoorsGrid -> Cells[i+1][1]==L"")
-			DNumDoorsGrid[i]=DBL_MIN;                    //если €чейка пуста€, то запись минимального значени€
+			DNumDoorsGrid[i]=INT_MIN;                    //если €чейка пуста€, то запись минимального значени€
 		else
 			TryStrToInt(NumDoorsGrid -> Cells[i+1][1],DNumDoorsGrid[i]);
 	}
 	for (int i=0; i < CoefQuanGrid -> ColCount-1; i++) {      //запись данных из 3 таблице в массив
 		if (CoefQuanGrid -> Cells[i+1][1]==L"")
-			DCoefQuanGrid[i]=DBL_MIN;                    //если €чейка пуста€, то запись минимального значени€
+			DCoefQuanGrid[i]=INT_MIN;                    //если €чейка пуста€, то запись минимального значени€
 		else
 			TryStrToFloat(CoefQuanGrid -> Cells[i+1][1],DCoefQuanGrid[i]);
 	}
@@ -314,7 +314,7 @@ void __fastcall TMainForm::MOpenClick(TObject *Sender)        //открыте файла
 	CapacityGrid->ColCount=ColCount1+1;                                             //установка размера таблицы 1
 	for (int i=0; i < ColCount1; i++) {                                             //запись данныз таблицы 1
 		CapacityGrid -> Cells[i+1][0]=i+1;
-		if (DCapacityGrid[i]==DBL_MIN)
+		if (DCapacityGrid[i]==INT_MIN)
 			CapacityGrid -> Cells[i+1][1]=L"";
 		else
 			CapacityGrid -> Cells[i+1][1]=DCapacityGrid[i];
@@ -324,7 +324,7 @@ void __fastcall TMainForm::MOpenClick(TObject *Sender)        //открыте файла
 	NumDoorsGrid->ColCount=ColCount2+1;                                            //установка размера таблицы 2
 	for (int i=0; i < ColCount2; i++) {                                            //запись данныз таблицы 2
 		NumDoorsGrid -> Cells[i+1][0]=i+1;
-		if (DNumDoorsGrid[i]==DBL_MIN)
+		if (DNumDoorsGrid[i]==INT_MIN)
 			NumDoorsGrid -> Cells[i+1][1]=L"";
 		else
 			NumDoorsGrid -> Cells[i+1][1]=DNumDoorsGrid[i];
@@ -494,7 +494,7 @@ void __fastcall TMainForm::BCalcDataClick(TObject *Sender)
 	NumChart = 0;
 	PaintChart(NumChart);
 	BNextChart -> Enabled = true;
-    LChart -> Caption=L"" ;
+    BPrevChart -> Enabled = false;
 }
 
 //---------------------------------------------------------------------------
@@ -503,6 +503,7 @@ bool __fastcall TMainForm::PaintChart(int NumChart) {       //рисование графика
         return false;
 	}
 	Charts -> Picture->Assign( NULL );
+	PatBlt(Charts -> Canvas -> Handle, 0, 0, Charts->Width, Charts->Height, WHITENESS);
 	double a =0* M_PI/180,b=252* M_PI/180,c=15* M_PI/180 ; //углы поворота оси координат
 	double l1 = cos(a) * cos(c) - cos(b) * sin(a) * sin(c);   //переменные дл€ проекции
 	double l2 = -cos(a) * sin(c) + cos(b) * sin(a) * cos(c);
@@ -574,15 +575,16 @@ void __fastcall TMainForm::FormResize(TObject *Sender)              //изменение 
 	CapacityGrid->Width = MainForm -> ClientWidth - 16;             //корректировка размера элементов
 	NumDoorsGrid->Width = MainForm -> ClientWidth - 16;
 	CoefQuanGrid->Width = MainForm -> ClientWidth - 16;
-	ScrollBoxRes->Height = MainForm -> ClientHeight - 406;
+	ScrollBoxRes->Height = MainForm -> ClientHeight - 506;
 	ScrollBoxRes->Width = (MainForm -> ClientWidth - 32)/2;
 	Charts->Width = (MainForm -> ClientWidth - 32)/2;
-	LChart->Left = ScrollBoxRes->Width+30;
-	Charts->Left = ScrollBoxRes->Width+30;
-	Charts->Height = MainForm -> ClientHeight - 456;
-	if (true) {
-
-	}
+	LChart->Left = ScrollBoxRes->Width+22;
+	Charts->Left = ScrollBoxRes->Width+22;
+	Charts->Height = MainForm -> ClientHeight - 560;
+	BPrevChart->Left = ScrollBoxRes->Width+22;
+	BPrevChart->Top = MainForm -> ClientHeight-57;
+	BNextChart->Left = MainForm -> ClientWidth- 152;
+	BNextChart->Top = MainForm -> ClientHeight-57;
     PaintChart(NumChart);
 }
 //---------------------------------------------------------------------------

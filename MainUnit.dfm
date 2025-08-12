@@ -2,8 +2,8 @@ object MainForm: TMainForm
   Left = 0
   Top = 0
   Caption = 'MainForm'
-  ClientHeight = 615
-  ClientWidth = 652
+  ClientHeight = 629
+  ClientWidth = 658
   Color = clBtnFace
   Constraints.MinHeight = 682
   Constraints.MinWidth = 670
@@ -17,8 +17,8 @@ object MainForm: TMainForm
   OnCreate = FormCreate
   OnResize = FormResize
   DesignSize = (
-    652
-    615)
+    658
+    629)
   TextHeight = 13
   object Label1: TLabel
     Left = 8
@@ -126,7 +126,7 @@ object MainForm: TMainForm
     OnKeyPress = DoubleKeyPress
   end
   object EMinInterval: TEdit
-    Left = 578
+    Left = 582
     Top = 309
     Width = 68
     Height = 21
@@ -135,11 +135,13 @@ object MainForm: TMainForm
   end
   object StatusBar: TStatusBar
     Left = 0
-    Top = 596
-    Width = 652
+    Top = 610
+    Width = 658
     Height = 19
     Panels = <>
     SimplePanel = True
+    ExplicitTop = 591
+    ExplicitWidth = 652
   end
   object ScrollBoxRes: TScrollBox
     Left = 8
@@ -158,24 +160,28 @@ object MainForm: TMainForm
     OnClick = BCalcDataClick
   end
   object BNextChart: TButton
-    Left = 526
-    Top = 565
+    Left = 532
+    Top = 579
     Width = 118
     Height = 25
     Anchors = [akRight, akBottom]
     Caption = #1057#1083#1077#1076#1091#1102#1097#1080#1081' '#1075#1088#1072#1092#1080#1082
     TabOrder = 8
     OnClick = BNextChartClick
+    ExplicitLeft = 526
+    ExplicitTop = 560
   end
   object BPrevChart: TButton
-    Left = 350
-    Top = 565
+    Left = 356
+    Top = 579
     Width = 121
     Height = 25
     Anchors = [akRight, akBottom]
     Caption = #1055#1088#1077#1076#1099#1076#1091#1097#1080#1081' '#1075#1088#1072#1092#1080#1082
     TabOrder = 9
     OnClick = BPrevChartClick
+    ExplicitLeft = 350
+    ExplicitTop = 560
   end
   object MainMenu: TMainMenu
     Left = 472
